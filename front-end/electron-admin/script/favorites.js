@@ -1,6 +1,6 @@
 console.log(localStorage.getItem('user_token'))
 
-$("#logout").click(function(){
+$("#logout").on("click", function(){
     axios({
         method: 'post',
         url: 'http://127.0.0.1:8000/api/no_auth/logout'
