@@ -1,0 +1,240 @@
+* {
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Radio Canada', sans-serif;
+    color: white;
+}
+
+.page-wrapper {
+    background-color: #A91079;
+    width: 100vw;
+    height: 100vh;
+}
+
+.header {
+    display: flex;
+    height: 150px;
+    justify-content: space-between;
+    background-color: #2E0249;
+    padding: 10px 80px 0 80px;
+    align-items: center;
+    border-bottom: 3px dashed white;
+}
+
+.header-logo > a > img {
+    width: 120px;
+    border: 3px solid #F806CC;
+    border-radius: 50%;
+}
+
+.page-title {
+    font-size: 30px;
+    color: white;
+}
+
+.page-title > h1{
+    filter: drop-shadow(0 0 5px #F806CC);
+}
+
+.login-info {
+    display: flex;
+    align-items: center;
+}
+
+.login-info > a {
+    text-decoration: none;
+    font-size: 30px;
+    margin-right: 20px;
+    color: white;
+}
+
+.login-info > img {
+    border-radius: 50%;
+    width: 90px;
+}
+
+.homepage-title {
+    font-size: 80px;
+    color: white;
+}
+
+
+.favorite {
+    font-weight: 20px;
+}
+
+.favorite:active {
+    background-color: #F806CC;
+}
+
+@media(max-width: 1600px) {
+    .slider-container {
+        width: 100%;
+    }
+}
+
+/*
+================================================================
+favorites page */
+
+.favorites {
+    margin-top: 50px;
+}
+
+.favorites > h1 {
+    font-family: "foodhub-font", Helvetica, sans-serif;
+    text-align: center;
+    position: relative;
+    bottom: 30px;
+    color: white;
+    font-size: 80px;
+    filter: drop-shadow(0 0 20px black);
+    transition: filter 0.3s;
+}
+
+.favorites-container {
+    margin: auto;
+    width: 90vw;
+    border: 2px solid white;
+    border-radius: 20px;
+}
+
+.favorite-product{
+    margin-left: 20px;
+    border: 2px solid #F806CC;
+}
+
+.favorite-product > img {
+    width: 180px;
+}
+
+.my-favorites {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 20px 20px 20px 0;
+}
+
+/*
+================================================================
+sign in page */
+.sign-in-section{
+    text-align: center;
+}
+
+.sign-in-container {
+    border: 5px solid white;
+    border-radius: 20px;
+    width: 530px;
+    margin-top: 70px;
+}
+
+.sign-in-wrapper {
+    display: inline-block;
+    margin: auto;
+}
+
+.sign-in-card {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+}
+
+.input {
+    margin: 40px 0 10px 0 ;
+    width: 380px;
+    height: 90px;
+    align-self: center;
+    border: 2px solid #424241;
+    border-radius: 10px;
+    color: black;
+}
+
+input[type="text"] {
+    font-size: 30px;
+}
+
+input[type="password"] {
+    font-size: 30px;
+}
+
+.sign-in-card button {
+    font-size: 30px;
+    cursor: pointer;
+    transition: background-color 0.7s, color 0.6s;
+}
+
+.sign-in-card button:hover {
+    background-color: #424241;
+    color: white;
+}
+
+.input::placeholder {
+    font-size: 20px;
+}
+
+
+.sign-in-card a {
+    margin: 20px 0 20px 0;
+    font-size: 20px;
+}
+
+
+/*
+================================================================
+sign in page */
+
+.sign-up-wrapper {
+    border: 3px solid white;
+    border-radius: 20px;
+    margin: 100px;
+    text-align: center;
+    align-self: center;
+    width: 500px;
+    display: inline-block;
+}
+
+.sign-up-container {
+    width: 500px;
+}
+
+.sign-up-card {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    text-align: center;
+    flex-wrap: wrap;
+}
+
+.sign-up-card > .input{
+    margin: 20px 40px 20px 40px;
+}
+
+.gender {
+    margin: 9px 40px 10px 0 ;
+    padding-top: 30px;
+    word-spacing: 10px;
+    width: 380px;
+    height: 90px;
+    align-self: center;
+    border: 2px solid #424241;
+    border-radius: 10px;
+    color: black;
+    display: inline-block;
+    background-color: white;
+}
+
+.sign-up-card button {
+    font-size: 30px;
+    cursor: pointer;
+    transition: background-color 0.7s, color 0.6s;
+}
+
+.sign-up-card button:hover {
+    background-color: #424241;
+    color: white;
+}
+
+.sign-up-section{
+    text-align: center;
+}
