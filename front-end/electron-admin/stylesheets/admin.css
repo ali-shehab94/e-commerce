@@ -1,0 +1,49 @@
+* {
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Radio Canada', sans-serif;
+    color: white;
+}
+
+.page-wrapper {
+    background-color: #A91079;
+    width: 100vw;
+    height: 100vh;
+}
+
+.header {
+    display: flex;
+    height: 150px;
+    justify-content: space-between;
+    background-color: #2E0249;
+    padding: 10px 80px 0 80px;
+    align-items: center;
+    border-bottom: 3px dashed white;
+}
+
+.header-logo > a > img {
+    width: 120px;
+    border: 3px solid #F806CC;
+    border-radius: 50%;
+}
+
+.page-title {
+    font-size: 30px;
+    color: white;
+}
+
+.page-title > h1{
+    filter: drop-shadow(0 0 5px #F806CC);
+}
+
+.login-info {
+    display: flex;
+    align-items: center;
+}
+
+.login-info > a {
+    text-decoration: none;
+    font-size: 30px;
+    margin-right: 20px;
+    color: white;
+}
