@@ -1,5 +1,5 @@
 const sign_in_button = document.getElementById('sign-in');
-console.log("4kifak")
+
 $("#sign-in").on('click', function(){
     console.log('hi')
 
@@ -30,8 +30,7 @@ $("#sign-in").on('click', function(){
             localStorage.setItem("user_name", user_name);
             localStorage.setItem("user_token", user_token);
             alert(`Welcome Admin: ${user_name}!`);
-            // window.location.replace("../pages/my-favorites.html")
+            window.location.replace("pages/admin-add-product.html");
         }
-            
     })
 });

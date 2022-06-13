@@ -1,15 +1,12 @@
-
-
-
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
     <link rel="stylesheet" href="../stylesheets/styles.css">
-    <title>Sign up</title>
+    <title>Add Product</title>
 </head>
 <body>
     <div class="page-wrapper">
@@ -18,7 +15,7 @@
                 <a href="index.html"><img src="../assets/images/logos/logo.png" alt="se-logo"></a>
             </div>
             <div class="page-title">
-                <h1>Sign Up</h1>
+                <h1>Add Product</h1>
             </div>
             <div class="login-info">
                 <a href="#">Welcome</a>
@@ -28,16 +25,16 @@
             <div class="sign-up-wrapper">
                 <div class="sign-up-container">
                     <div class="sign-up-card">
-                        <input type="text" name="name" class="input" id="name" placeholder="Name">
-                        <input type="text" name="email" class="input" id="email" placeholder="Email address">
-                        <input type="password" name="Password" class="input" id="password" placeholder="Password">
-                        <button class="input" id="sign-up-btn">Submit</button>
+                        <input type="text" name="name" class="input" id="name" placeholder="Product name">
+                        <input type="text" name="description" class="input" id="description" placeholder="Description">
+                        <input type="text" name="price" class="input" id="price" placeholder="Price">
+                        <input type="text" name="category" class="input" id="category" placeholder="Category">
+                        <button class="input" id="add-product-btn">Add</button>
                     </div>
                 </div>
             </div>
         </section>
-        <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>      
-        <script src="../script/sign-up.js"></script>
+        <script src="../script/add-product.js"></script>
 </body>
 </html>
