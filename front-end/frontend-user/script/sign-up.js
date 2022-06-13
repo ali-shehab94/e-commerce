@@ -7,9 +7,9 @@ data.append('password', $("#password").val());
 
 
 axios({
-method: 'post',
-url: 'http://127.0.0.1:8000/api/no_auth/register',
-data: data,
+    method: 'post',
+    url: 'http://127.0.0.1:8000/api/no_auth/register',
+    data: data
 })
 .then(function (response) {
     if (response){

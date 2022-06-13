@@ -67,6 +67,14 @@
     background-color: #F806CC;
 }
 
+.favorite-btn {
+    color: black;
+}
+
+.favorite-btn:active {
+    background-color: #2E0249;
+}
+
 @media(max-width: 1600px) {
     .slider-container {
         width: 100%;

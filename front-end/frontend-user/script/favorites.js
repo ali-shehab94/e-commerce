@@ -1,13 +1,31 @@
+console.log(localStorage.getItem('user_token'))
+
+$("#logout").click(function(){
+    axios({
+        method: 'post',
+        url: 'http://127.0.0.1:8000/api/no_auth/logout'
+   })
+   .then(function(){
+        window.localStorage.clear();
+        window.location.replace("../index.html")
+   })
+   .catch(alert("You are not logged in"));
+    window.localStorage.clear()
+})
+
 axios({
     method: 'get',
-    url: 'http://127.0.0.1:8000/api/my_faves'
-   })
+    url: 'http://127.0.0.1:8000/api/my_faves',
+    headers: new Headers({
+        'authorization': 'bearer ' + localStorage.getItem('user_token')
+    })
+    })
    
    .then(function (response) {
-       mydata = response.data;
-       console.log(mydata);
-       parseData(mydata.products);
-   })
+       console.log(response.data);
+    //    console.log(mydata);
+    //    parseData(mydata.products);
+    })
    
    function parseData(obj) {
        for (var data of obj) {

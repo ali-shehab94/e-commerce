@@ -1,83 +1,80 @@
+const user_id = (localStorage.getItem('user_id'));
+console.log(localStorage.getItem('user_token'))
 
-
-// axios.get('http://127.0.0.1:8000/api/get_categories')
-// .then((res) => console.log(res.headers))
-// .catch((err) => console.log(err))
-
-
-// axios.post('http://127.0.0.1:8000/api/get_products', {
-//     name: "Samsung Smart TV",
-//     description: "This TV is smarter that it's maker",
-//     price: "800",
-//     category_id: "5"
-// })
-// .then((res) => console.log(res))
-// .catch((err) => console.log(err))
-
-        //    product.innerHTML = '`<div id="product"><div class="product"><div class="product-img"><img src="assets/images/profile-pic-test.jpg" alt="vacuum">'
-        //    `<div id="product">
-        //         <div class="product">
-        //             <div class="product-img">
-        //                 <img src="assets/images/vacuum-cleaner.jpg" alt="vacuum">
-        //             </div>
-        //             <br>
-        //             <div>
-        //                 <h3>Product Name</h3>
-        //                 <p>Description</p>
-        //                 <p>Price</p>
-        //                 <p>Category</p>
-        //             </div>
-        //         </div>
-        //     </div>`     
-           
-           
-           
-           
-           
-        //    `<div id="product">
-        //                                <div class="product">
-        //                                    <div class="product-img">
-        //                                        <img src="assets/images/vacuum-cleaner.jpg" alt="vacuum">
-        //                                    </div>
-        //                                    <br>
-        //                                    <div>
-        //                                        <h3>${name}</h3>
-        //                                        <p>${description}</p>
-        //                                        <p>${price}</p>
-        //                                        <p>${category}</p>
-        //                                        <button class="favorite" id>Add to Favorites 💜</button>
-        //                                    </div>
-        //                                </div>
-        //                            </div>`  
+axios({
+    method: 'get',
+    url: 'http://127.0.0.1:8000/api/no_auth/get_products'
+   })
    
+   .then(function (response) {
+       var mydata = response.data;
+       console.log(mydata);
+       console.log(mydata);
+       parseData(mydata.products);
+   })
+   
+   function parseData(obj) {
+       for (var data of obj) {
+           console.log(data);
+           let id = data.id;
+           let name = data.name;
+           let description = data.description;
+           let price = data.price;
+           let category = data.category;
+           console.log(data.name)
+           console.log(data.description);
+           console.log(price)
+           console.log(category)
+           let productDisplay = document.getElementById("my-favorites");
+           productDisplay.innerHTML += `<div class="favorite-product" id="${id}">
+           <img src="assets/images/vacuum-cleaner.jpg" alt="fav">
+           <h3>${name}</h3>
+           <p>${description}</p>
+           <p>$${price}</p>
+           <p>${category}</p>
+           <button class="favorite-btn" id="favorite" onClick= "favorite(this)" >Favorite This 💜</button>
+       </div>`
+
        }
-   }
-
-
-   let slider = tns({
-    container : ".slider",
-    "slideBy" : 1,
-    "speed": 400,
-    "nav" : false,
-    controlsContainer: "#controls",
-    prevButton : ".previous",
-    nextButton : ".next",
-    responsive: {
-        1600: {
-            items: 4, 
-            gutter: 20
-        },
-        1024: {
-            items: 3, 
-            gutter: 20
-        },
-        768: {
-            items: 2, 
-            gutter: 20
-        },
-        480: {
-            items: 1, 
-        }
-        
     }
-})
+
+    let favorite = (e) => {
+        let favorited_product = e.parentElement.id
+        let data = new FormData();
+        data.append('product_id', favorited_product);
+        data.append('user_id', user_id)
+        console.log(favorited_product, user_id)
+        axios({
+            method: 'post',
+            url: 'http://127.0.0.1:8000/api/favorite_this',
+            headers: new Headers({
+                'authorization': 'bearer ' + localStorage.getItem('user_token')
+            }),
+            data: data
+            })
+        .then(function (response) {
+            if (response){
+                console.log("response: ", response);
+            }else {
+                console.log("no response")
+            }
+        })
+    }
+// $("#favorite")
+//     let data = new FormData();
+//     data.append('product_id', $("#name").val());
+//     data.append('email', $("#email").val());
+//     data.append('password', $("#password").val());
+//    axios({
+//     method: 'post',
+//     url: 'http://127.0.0.1:8000/api/favorite_this',
+//     data: data
+//    })
+//    .then(function (response) {
+//     if (response){
+//     alert(response.data.message);
+//     window.location.href = "sign-in.html";
+//     }else {
+//     console.log(response.status)
+//     }
+// })

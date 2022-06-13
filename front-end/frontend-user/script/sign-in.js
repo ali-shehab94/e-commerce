@@ -1,5 +1,4 @@
 
-//AXIOS
 $("#sign-in").click(function(){
     let data = new FormData();
     data.append('email', $("#email").val());
@@ -25,7 +24,7 @@ $("#sign-in").click(function(){
             localStorage.setItem("user_id", user_id);
             localStorage.setItem("user_name", user_name);
             localStorage.setItem("user_token", user_token);
-            alert(`Welcome ${user_name} You are now signed in`);
+            alert(`Welcome ${user_name}! You are now signed in`);
             window.location.replace("../pages/my-favorites.html")
     })
 });
