@@ -46,13 +46,11 @@ class ProductController extends Controller
             'user' => $user_id,
             'product' => $product_id,
         ]);
-
     }
 
     public function myFavorites(){
         $user = auth()->user();
         $user_id = $user->id;
-        
         $favorites = ProductUserFavorite::where('user_id', $user_id)->get();
             return response()->json([
                 "status" => "Success",
