@@ -15,10 +15,12 @@ class UserMiddleware
      * @return \Illuminate\Http\Response|\Illuminate\Http\RedirectResponse
      */
     public function handle(Request $request, Closure $next){
+        echo $request;
+        print_r(getallheaders());
         $user = Auth::user();
         if($user){
             return $next($request);
-        }   
+        }
         return response()->json([
             "status" => "Fail",
             "message" => "You are not logged in"
